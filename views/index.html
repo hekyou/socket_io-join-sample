@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+    <h1>test</h1>
+    <h2>view</h2>
+    <div id="view">
+    </div>
+    <hr />
+    <h2>send</h2>
+    <form><input id="comment" type="text" value="" /> <input id="send" type="button" value="send" /></form>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="jquery.min.js"></script>-->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/chat.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#send").click(function () {
+                send('<%= name %>');
+            });
+            chat('<%= room %>', '<%= name %>');
+        });
+    </script>
+</body>
+</html>
+
